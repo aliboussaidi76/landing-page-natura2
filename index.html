@@ -1,379 +1,830 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>عسل الأطفال: طاقة وذكاء ونمو صحي</title>
-<meta name="description" content="احصل على أفضل عسل للأطفال لتعزيز الطاقة والمناعة والتركيز بطريقة طبيعية وصحية.">
-<meta name="keywords" content="عسل, أطفال, مناعة, طاقة, تركيز, صحة, حلو طبيعي, غذاء ملكات, لقاح النحل, فوائد العسل, شراء عسل">
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عسل الأطفال: طاقة وذكاء ونمو صحي</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
 
-:root {
-    --primary-color: #ff914d;
-    --secondary-color: #ffb74d;
-    --dark-color: #1a4d29;
-    --light-color: #f0f8f0;
-    --button-dark-color: #4a6c4c;
-    --font-family: 'Cairo', sans-serif;
-}
+        :root {
+            --primary-color: #ff914d;
+            --secondary-color: #ffb74d;
+            --dark-color: #1a4d29;
+            --light-color: #f0f8f0;
+            --button-dark-color: #4a6c4c;
+            --font-family: 'Cairo', sans-serif;
+        }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-body {
-    font-family: var(--font-family);
-    line-height: 1.6;
-    background-color: #FFF8E1;
-    color: var(--dark-color);
-}
+        body {
+            font-family: var(--font-family);
+            line-height: 1.6;
+            background-color: #FFF8E1;
+            color: var(--dark-color);
+        }
 
-.container { max-width: 1100px; margin: auto; padding: 0 15px; }
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            overflow: hidden;
+            padding: 0 15px;
+        }
 
-header {
-    background: linear-gradient(135deg, var(--dark-color), #2f693e);
-    color: white;
-    padding: 30px 0;
-    text-align: center;
-}
+        header {
+            background: linear-gradient(135deg, var(--dark-color), #2f693e);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
 
-header h1 { font-size: 2.2rem; margin-bottom: 8px; }
-header p { font-size: 1rem; max-width: 700px; margin: auto; text-align: center; }
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 8px;
+        }
 
-.top-banner {
-    background-color: #D32F2F;
-    color: white;
-    padding: 8px 12px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: bold;
-    font-size: 15px;
-    position: sticky;
-    top: 0;
-    z-index: 10000;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
-}
+        header p {
+            font-size: 1rem;
+            max-width: 700px;
+            margin: auto;
+        }
 
-.top-buttons a {
-    margin-left: 6px;
-    padding: 5px 10px;
-    border-radius: 20px;
-    font-size: 13px;
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-}
-.top-buttons .phone-btn { background-color: #1976D2; }
-.top-buttons .whatsapp-btn { background-color: #25D366; }
+        .offers-section {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .offer-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background: white;
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            flex: 1 1 30%;
+            max-width: 350px;
+            border: 3px solid transparent;
+        }
+        
+        .offer-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
 
-.offers-section {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin: 20px 0;
-}
+        .offer-item.selected {
+            border: 3px solid var(--primary-color);
+        }
+        
+        @media (max-width: 767px) {
+            .offers-section {
+                flex-direction: column;
+            }
+            .offer-item {
+                width: 100%;
+                max-width: none;
+            }
+        }
 
-.offer-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    background: white;
-    padding: 15px;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
-    cursor: pointer;
-    flex: 1 1 30%;
-    max-width: 350px;
-    border: 3px solid transparent;
-}
-.offer-item.selected { border: 3px solid var(--dark-color); }
+        .offer-item img {
+            width: 100%;
+            height: auto;
+            max-width: 800px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
 
-.offer-item img { width: 100%; max-width: 250px; border-radius: 10px; margin-bottom: 10px; }
+        .offer-item h3 {
+            color: var(--dark-color);
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
 
-.offer-item h3 { color: var(--dark-color); font-size: 1.2rem; margin-bottom: 5px; }
-.offer-item p { font-size: 0.9rem; color: #555; }
-.offer-item p.highlight { font-weight: bold; color: var(--primary-color); margin-top: 5px; }
+        .offer-item p {
+            font-size: 0.9rem;
+            color: #555;
+        }
 
-.cta-container { text-align: center; margin: 20px 0; }
-.cta-button {
-    display: inline-block;
-    background: #2E7D32;
-    color: white;
-    padding: 12px 30px;
-    text-decoration: none;
-    border-radius: 50px;
-    font-weight: bold;
-    font-size: 1.1rem;
-    border: none;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    animation: dance 1s infinite;
-}
-.cta-button:hover { background: #1B5E20; transform: scale(1.1); }
+        .offer-item p.highlight {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-top: 5px;
+        }
+        
+        .offer-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+        }
 
-@keyframes dance {
-    0%, 100% { transform: translateX(-50%) rotate(0deg); }
-    25% { transform: translateX(-50%) rotate(-5deg); }
-    50% { transform: translateX(-50%) rotate(5deg); }
-    75% { transform: translateX(-50%) rotate(-5deg); }
-}
+        .offer-btn {
+            background: #fff;
+            color: var(--dark-color);
+            border: 2px solid var(--button-dark-color);
+            padding: 10px 20px;
+            font-size: 0.9rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
 
-section { padding: 30px 0; }
+        .offer-btn.selected {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
 
-.section-title {
-    text-align: center;
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-    color: var(--dark-color);
-    position: relative;
-}
-.section-title::after {
-    content: '';
-    width: 60px;
-    height: 3px;
-    background: var(--primary-color);
-    display: block;
-    margin: 8px auto 0;
-    border-radius: 2px;
-}
+        .offer-btn:hover {
+            background: var(--button-dark-color);
+            color: white;
+        }
+        
+        .cta-container {
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
 
-.hero-image { display: flex; justify-content: center; padding: 15px 0; }
-.hero-image img { width: 100%; height: auto; max-width: 400px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .cta-button {
+            display: inline-block;
+            background: #FF5722;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            animation: pulse 2s infinite;
+        }
 
-.benefit-card, .ingredient-item, .testimonial-card {
-    background: #fff;
-    padding: 15px 20px;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    margin-bottom: 15px;
-}
-.benefit-card:hover, .ingredient-item:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+        .cta-button:hover {
+            background: #FF7043;
+            transform: scale(1.08);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            }
+        }
 
-.ingredient-item { display: flex; flex-direction: row; align-items: center; gap: 15px; text-align: right; margin-bottom: 15px;}
-.ingredient-image { flex: 1; max-width: 100px; }
-.ingredient-text { flex: 2; }
+        section {
+            padding: 30px 0;
+        }
 
-.testimonial-card { text-align: right; margin-bottom: 15px; }
+        .section-title {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+            position: relative;
+        }
 
-.order-form .form-box { background: white; color: var(--dark-color); padding: 20px; border-radius: 15px; max-width: 90%; margin: auto; box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
-.order-form form input, .order-form form select { width: 100%; padding: 10px; margin-bottom: 10px; border: 2px solid var(--dark-color); border-radius: 8px; font-size: 0.8rem; font-family: var(--font-family); color: var(--dark-color); }
-.order-form form button { background: var(--primary-color); color: white; border: none; padding: 12px 30px; font-size: 1.1rem; font-weight: bold; border-radius: 8px; cursor: pointer; transition: background 0.3s ease; }
-.order-summary { background: #f9f9f9; border-radius: 15px; padding: 15px; margin-top: 15px; text-align: right; border: 1px dashed #ccc; }
+        .section-title::after {
+            content: '';
+            width: 60px;
+            height: 3px;
+            background: var(--primary-color);
+            display: block;
+            margin: 8px auto 0;
+            border-radius: 2px;
+        }
+        
+        .hero {
+            padding-bottom: 20px;
+        }
 
-footer { text-align: center; padding: 15px 0; background: var(--dark-color); color: white; font-size: 0.8rem; }
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            padding: 15px 0;
+        }
+        
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            max-width: 600px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
 
-.floating-btn {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #2E7D32;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 30px;
-  font-size: 16px;
-  font-weight: bold;
-  text-decoration: none;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  z-index: 9999;
-  animation: dance 1s infinite;
-}
-.floating-btn:hover { background-color: #1B5E20; transform: translateX(-50%) scale(1.1); }
+        .testimonials {
+            background-color: #f9f9f9;
+        }
 
-@media (max-width: 767px) {
-    .offers-section { flex-direction: column; }
-    .offer-item { width: 100%; max-width: none; }
-    .ingredient-item { flex-direction: column; }
-}
-</style>
+        .testimonial-card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            font-size: 1rem;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .testimonial-card .author {
+            font-weight: bold;
+            color: var(--dark-color);
+        }
+
+        .faq {
+            background-color: #FFF8E1;
+        }
+
+        .faq-item {
+            margin-bottom: 15px;
+            background: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+            cursor: pointer;
+        }
+        
+        .faq-question {
+            font-weight: bold;
+            font-size: 1rem;
+            color: var(--dark-color);
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .faq-question::before {
+            content: '+';
+            font-size: 1.2rem;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-question.active::before {
+            content: '-';
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            display: none;
+            padding-top: 10px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .faq-answer.active {
+            display: block;
+        }
+
+        .benefits .container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .benefit-card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        .benefit-card h3 {
+            color: var(--dark-color);
+            margin-bottom: 8px;
+            font-size: 1.3rem;
+        }
+        .benefit-card p {
+            font-size: 0.9rem;
+            color: #4a6c4c;
+        }
+        
+        .ingredients {
+            background-color: #FFF8E1;
+        }
+        .ingredient-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .ingredient-item:nth-child(even) {
+            flex-direction: column;
+        }
+        .ingredient-image {
+            flex: 1;
+            max-width: 90%;
+        }
+        
+        .ingredient-text {
+            flex: 2;
+        }
+        .ingredient-text h3 {
+            font-size: 1.6rem;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+        .ingredient-text p {
+            font-size: 0.9rem;
+            color: var(--dark-color);
+        }
+
+        .usage .container {
+            background: #fff;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+        .usage ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .usage li {
+            font-size: 0.9rem;
+            color: var(--dark-color);
+            position: relative;
+            padding-right: 20px;
+        }
+        .usage li::before {
+            content: '✓';
+            color: var(--button-dark-color);
+            font-weight: bold;
+            position: absolute;
+            right: 0;
+            font-size: 1rem;
+        }
+        
+        .order-form {
+            background-color: #FFF8E1;
+            color: var(--dark-color);
+            padding: 30px 0;
+            text-align: center;
+        }
+        .order-form .form-box {
+            background: white;
+            color: var(--dark-color);
+            padding: 20px;
+            border-radius: 15px;
+            max-width: 90%;
+            margin: auto;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        .order-form .form-box h2 {
+            color: var(--dark-color);
+            margin-bottom: 10px;
+        }
+        .order-form form input,
+        .order-form form select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid var(--button-dark-color);
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-family: var(--font-family);
+            color: var(--dark-color);
+        }
+        .order-form form button {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            animation: pulse-button 2s infinite;
+        }
+        .order-form form button:hover {
+            background: var(--secondary-color);
+        }
+        
+        @keyframes pulse-button {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(255, 87, 34, 0.7);
+            }
+            70% {
+                transform: scale(1.05);
+                box-shadow: 0 0 0 10px rgba(255, 87, 34, 0);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(255, 87, 34, 0);
+            }
+        }
+
+        .order-summary {
+            background: #f9f9f9;
+            border-radius: 15px;
+            padding: 15px;
+            margin-top: 15px;
+            text-align: right;
+            border: 1px dashed #ccc;
+        }
+
+        .order-summary h4 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+
+        .order-summary p {
+            font-size: 1rem;
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .order-summary p span.price {
+            font-weight: bold;
+            color: var(--primary-color);
+            direction: ltr;
+        }
+
+        .order-summary p.total {
+            border-top: 2px solid #ddd;
+            padding-top: 10px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--dark-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px 0;
+            background: var(--dark-color);
+            color: white;
+            font-size: 0.8rem;
+        }
+
+        @media (min-width: 768px) {
+            .hero .container {
+                flex-direction: row-reverse;
+                text-align: right;
+            }
+            .benefits .container {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+            .ingredient-item {
+                flex-direction: row;
+                text-align: right;
+            }
+            .ingredient-item:nth-child(even) {
+                flex-direction: row-reverse;
+            }
+            .testimonial-card {
+                margin: 0 10px;
+            }
+            .testimonials .container {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+            .offers-section {
+                flex-wrap: nowrap;
+            }
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <div class="container">
+            <h1>عسل الأطفال: طاقة وذكاء ونمو صحي</h1>
+            <p>وداعاً للحلويات الضارة! امنح طفلك هدية الطبيعة... مذاق حلو وفوائد عظيمة.</p>
+        </div>
+    </header>
 
-<div class="top-banner">
-  <marquee behavior="scroll" direction="right" scrollamount="6">
-    ⏰ العرض ينتهي هذا الأسبوع! 🚨 سارع بالطلب الآن قبل نفاد الكمية!
-  </marquee>
-  <div class="top-buttons">
-    <a href="tel:0555000000" class="phone-btn">📞 اتصل بنا</a>
-    <a href="https://wa.me/213555000000" class="whatsapp-btn">💬 واتساب</a>
-  </div>
-</div>
+    <section class="offers">
+        <div class="container">
+            <h2 class="section-title">اختر العرض الذي يناسبك</h2>
+            <div class="offers-section">
+                <div class="offer-item selected" data-offer="single">
+                    <img src="https://i.imgur.com/gK65j8s.png" alt="عبوة واحدة من المنتج">
+                    <h3>عبوة واحدة</h3>
+                    <p>بسعر 215 ألف</p>
+                </div>
+                <div class="offer-item" data-offer="double">
+                    <img src="https://i.imgur.com/6S3lS74.png" alt="عبوتين من المنتج">
+                    <h3>عبوتان</h3>
+                    <p>وخذ 125غ مجاناً</p>
+                    <p class="highlight">**اطلب عبوتين واحصل على عبوة 125 غرام مجاناً.**</p>
+                </div>
+                <div class="offer-item" data-offer="triple">
+                    <img src="https://i.imgur.com/gK65j8s.png" alt="ثلاث عبوات من المنتج">
+                    <h3>اشترِ ثلاثة</h3>
+                    <p>وخذ واحدة مجاناً</p>
+                </div>
+            </div>
+            
+            <div class="offer-buttons">
+                <button class="offer-btn selected" data-offer="single">العبوة الأولى</button>
+                <button class="offer-btn" data-offer="double">العرض الثاني</button>
+                <button class="offer-btn" data-offer="triple">العرض الثالث</button>
+            </div>
+        </div>
+    </section>
 
-<header>
-  <h1>عسل الأطفال: طاقة وذكاء ونمو صحي</h1>
-  <p>وداعاً للحلويات الضارة! امنح طفلك هدية الطبيعة... مذاق حلو وفوائد عظيمة.</p>
-</header>
+    <section class="order-form" id="order">
+        <div class="container">
+            <h2 class="section-title" style="color: var(--dark-color);">للطلب اكتب معلوماتك في الخانات</h2>
+            <div class="form-box">
+                <p style="color: var(--dark-color);">اطلب الآن واستفد من العرض المحدود!</p>
+                
+                <form action="#" method="post">
+                    <input type="hidden" name="selected_offer" id="selected-offer-input" value="single">
+                    
+                    <label for="offer-display" style="text-align: right; display: block; margin-bottom: 5px;">العرض المختار:</label>
+                    <input type="text" id="offer-display" name="offer-display" readonly>
+                    
+                    <input type="text" name="name" placeholder="الاسم الكامل" required>
+                    <input type="tel" name="phone" placeholder="رقم الهاتف" required>
+                    <input type="text" name="address" placeholder="عنوان السكن (الشارع، الحي)" required>
+                    <select name="state" id="state-select" required>
+                        <option value="">اختر الولاية</option>
+                        <option value="العاصمة">العاصمة</option>
+                        <option value="البليدة">البليدة</option>
+                        <option value="بومرداس">بومرداس</option>
+                        <option value="سطيف">سطيف</option>
+                        <option value="قسنطينة">قسنطينة</option>
+                        <option value="عنابة">عنابة</option>
+                        <option value="وهران">وهران</option>
+                        <option value="عين الدفلة">عين الدفلة</option>
+                        <option value="مستغانم">مستغانم</option>
+                        <option value="المسيلة">المسيلة</option>
+                        <option value="تيزيوزو">تيزيوزو</option>
+                        <option value="بجاية">بجاية</option>
+                        <option value="المدية">المدية</option>
+                        <option value="بسكرة">بسكرة</option>
+                        <option value="البويرة">البويرة</option>
+                    </select>
+                    
+                    <button type="submit">تأكيد الطلب</button>
+                </form>
+            </div>
+            
+            <div class="order-summary">
+                <h4>ملخص الطلبية</h4>
+                <p>سعر الطلبية: <span id="summary-offer-price" class="price"></span></p>
+                <p>سعر التوصيل: <span id="summary-delivery-price" class="price"></span></p>
+                <p class="total">المجموع: <span id="summary-total-price" class="price"></span></p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="hero">
+        <div class="hero-image">
+            <img src="https://i.imgur.com/oD4jG7f.png" alt="صورة توضيحية للنحل والعسل في الطبيعة">
+        </div>
+        <div class="container" style="text-align: center; margin-top: 15px;">
+            <h2>حماية من الحلويات الضارة</h2>
+            <p>طفلك يستحق أفضل ما في الطبيعة. قل وداعًا للسكريات المصنعة التي تضر بصحته وذكائه، واستبدلها بحلاوة طبيعية مفيدة!</p>
+            <div class="cta-container">
+                <a href="#order" class="cta-button">اطلب الآن</a>
+            </div>
+        </div>
+    </section>
 
-<section class="hero-image">
-  <img src="PLACEHOLDER_IMAGE_PRODUCT.png" alt="صورة المنتج">
-</section>
+    <section class="benefits">
+        <div class="container">
+            <h2 class="section-title">لماذا يختار الآباء هذا المنتج؟</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h3>✅ يقوي المناعة</h3>
+                    <p>مكونات طبيعية غنية بمضادات الأكسدة التي تساعد على بناء جهاز مناعي قوي يحمي طفلك من الأمراض الموسمية.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>✅ يفتح الشهية</h3>
+                    <p>يحتوي على مكونات طبيعية معروفة بفعاليتها في تحفيز شهية الطفل بطريقة صحية، مما يساعده على تناول طعامه المفضل والاستفادة منه.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>✅ يعزز التركيز والذاكرة</h3>
+                    <p>غني بالفيتامينات والمعادن الضرورية لدعم وظائف المخ، مما يحسن التركيز وسرعة الحفظ والقدرة على الاستيعاب أثناء الدراسة.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>✅ بديل صحي للحلويات</h3>
+                    <p>مذاق رائع يحبه الأطفال، لكنه خالٍ من السكريات المكررة والمواد الحافظة الضارة، ليمنحهم الطاقة بدون أضرار.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section class="offers">
-  <div class="container">
-    <h2 class="section-title">اختر العرض الذي يناسبك</h2>
-    <div class="offers-section">
-      <div class="offer-item selected" data-offer="single" data-price="215000">
-        <img src="PLACEHOLDER_IMAGE_SINGLE.png" alt="عبوة واحدة">
-        <h3>عبوة واحدة</h3>
-        <p>215 ألف دج</p>
-      </div>
-      <div class="offer-item" data-offer="double" data-price="430000">
-        <img src="PLACEHOLDER_IMAGE_DOUBLE.png" alt="عبوتان">
-        <h3>عبوتان + 125غ مجاناً</h3>
-        <p class="highlight">احصل على عبوة 125غ مجاناً</p>
-      </div>
-      <div class="offer-item" data-offer="triple" data-price="645000">
-        <img src="PLACEHOLDER_IMAGE_TRIPLE.png" alt="ثلاث عبوات">
-        <h3>ثلاث عبوات + الرابعة مجاناً</h3>
-        <p class="highlight">اشتر 3 واحصل على الرابعة مجاناً</p>
-      </div>
-    </div>
-  </div>
-</section>
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">آراء الأمهات اللواتي وثقن بنا</h2>
+            <div class="testimonial-card">
+                <p>"كنت قلقة من نحافة ابني، لكن بعد استخدامه هذا المنتج، تحسنت شهيته بشكل ملحوظ وزاد وزنه بطريقة صحية. شكرًا لكم!"</p>
+                <div class="author">- أم محمد، الجزائر</div>
+            </div>
+            <div class="testimonial-card">
+                <p>"لاحظت فرقًا كبيرًا في تركيز ابنتي أثناء الدروس، لم تعد تتشتت بسرعة وأصبحت تستوعب المعلومات بشكل أسرع. منتج رائع بكل المقاييس."</p>
+                <div class="author">- ليلى، وهران</div>
+            </div>
+        </div>
+    </section>
 
-<section class="ingredients">
-  <div class="container">
-    <h2 class="section-title">مكونات طبيعية</h2>
-    <div class="ingredient-item">
-      <img class="ingredient-image" src="PLACEHOLDER_HONEY.png" alt="العسل">
-      <div class="ingredient-text">
-        <h4>العسل الطبيعي</h4>
-        <p>يقوي المناعة ويزيد الطاقة.</p>
-      </div>
-    </div>
-    <div class="ingredient-item">
-      <img class="ingredient-image" src="PLACEHOLDER_ROYAL_JELLY.png" alt="غذاء الملكات">
-      <div class="ingredient-text">
-        <h4>غذاء الملكات</h4>
-        <p>يزيد التركيز والنمو الصحي.</p>
-      </div>
-    </div>
-    <div class="ingredient-item">
-      <img class="ingredient-image" src="PLACEHOLDER_POLLEN.png" alt="حبوب اللقاح">
-      <div class="ingredient-text">
-        <h4>حبوب اللقاح</h4>
-        <p>تعزز المناعة وتقوي النشاط البدني والعقلي للأطفال.</p>
-      </div>
-    </div>
-  </div>
-</section>
+    <section class="ingredients">
+        <div class="container">
+            <h2 class="section-title">المكونات وفوائدها</h2>
+            <div class="ingredient-item">
+                <div class="ingredient-image">
+                    <img src="https://i.imgur.com/8F20P2F.jpg" alt="عسل جبلي نقي">
+                </div>
+                <div class="ingredient-text">
+                    <h3>العسل الجبلي النقي</h3>
+                    <p>يُعرف بخصائصه العلاجية الفريدة وقيمته الغذائية العالية. مصدر طبيعي للطاقة السريعة، ويساعد على تهدئة السعال والحلق.</p>
+                </div>
+            </div>
+            <div class="ingredient-item">
+                <div class="ingredient-image">
+                    <img src="https://i.imgur.com/x0qS7cZ.jpg" alt="حبوب لقاح طازجة">
+                </div>
+                <div class="ingredient-text">
+                    <h3>حبوب اللقاح الطازجة</h3>
+                    <p>تُسمى "غذاء الملوك" لاحتوائها على جميع الأحماض الأمينية الأساسية، الفيتامينات، والمعادن. تساعد على تحسين النمو البدني والذهني وتجديد الخلايا.</p>
+                </div>
+            </div>
+            <div class="ingredient-item">
+                <div class="ingredient-image">
+                    <img src="https://i.imgur.com/02Fp6Qp.jpg" alt="غذاء ملكات النحل">
+                </div>
+                <div class="ingredient-text">
+                    <h3>غذاء ملكات النحل (اختياري)</h3>
+                    <p>مضاد حيوي طبيعي يقوي جهاز المناعة، ويمنح الجسم الحيوية والنشاط اللازم للتركيز والاستيعاب.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section class="benefits">
-  <div class="container">
-    <h2 class="section-title">فوائد العسل للأطفال</h2>
-    <div class="benefit-card">✔ يزيد النشاط والطاقة.</div>
-    <div class="benefit-card">✔ يقوي المناعة ويقلل الأمراض.</div>
-    <div class="benefit-card">✔ يحسن التركيز والذاكرة.</div>
-  </div>
-</section>
+    <section class="usage">
+        <div class="container">
+            <h2 class="section-title">طريقة الاستعمال</h2>
+            <p style="text-align: center; font-size: 0.9rem; margin-bottom: 15px;">للحصول على أفضل النتائج، اتبع هذه الإرشادات البسيطة:</p>
+            <ul>
+                <li>تناول ملعقة صغيرة واحدة يومياً على الريق، قبل وجبة الإفطار.</li>
+                <li>يمكن خلطه مع كوب من الماء الدافئ أو الحليب.</li>
+                <li>يُفضل أن يؤخذ بانتظام لضمان الاستفادة الكاملة من فوائده.</li>
+                <li>يُحفظ في مكان بارد وجاف، بعيداً عن أشعة الشمس المباشرة.</li>
+            </ul>
+        </div>
+    </section>
 
-<section class="testimonials">
-  <div class="container">
-    <h2 class="section-title">آراء الزبائن</h2>
-    <div class="testimonial-card">"ولدي ولا يعرف التعب، يعطيه طاقة كبيرة!" - سمية</div>
-    <div class="testimonial-card">"العسل ممتاز، ركز ولدي في الدراسة." - فريد</div>
-    <div class="testimonial-card">"صراحة منتج طبيعي وراقي، أحببته العائلة كلها." - ياسمين</div>
-  </div>
-</section>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 جميع الحقوق محفوظة. [اسم شركتك أو علامتك التجارية]</p>
+        </div>
+    </footer>
 
-<section class="order-form" id="order">
-  <div class="container">
-    <h2 class="section-title">للطلب أكتب معلوماتك في الخانات التالية</h2>
-    <div class="form-box">
-      <form id="orderForm">
-        <label>الاسم الكامل:</label>
-        <input type="text" name="name" required>
-        <label>رقم الهاتف:</label>
-        <input type="tel" name="phone" required>
-        <label>العنوان:</label>
-        <input type="text" name="address" required>
-        <label>اختر الولاية:</label>
-        <select name="state" id="state-select" required>
-          <option value="">اختر</option>
-          <option value="العاصمة">العاصمة</option>
-          <option value="البليدة">البليدة</option>
-          <option value="تيبازة">تيبازة</option>
-          <option value="بومرداس">بومرداس</option>
-          <option value="تيزي وزو">تيزي وزو</option>
-          <option value="بجاية">بجاية</option>
-          <option value="الشلف">الشلف</option>
-          <option value="مستغانم">مستغانم</option>
-          <option value="وهران">وهران</option>
-          <option value="سيدي بلعباس">سيدي بلعباس</option>
-          <option value="قسنطينة">قسنطينة</option>
-          <option value="عنابة">عنابة</option>
-          <option value="المسيلة">المسيلة</option>
-          <option value="سطيف">سطيف</option>
-          <option value="برج بوعريريج">برج بوعريريج</option>
-        </select>
-        <label>العرض المختار:</label>
-        <input type="text" id="selectedOffer" value="عبوة واحدة" readonly>
-        <button type="submit">تأكيد الطلب</button>
-      </form>
-      <div class="order-summary" id="orderSummary"></div>
-    </div>
-  </div>
-</section>
+    <script>
+        const offerItems = document.querySelectorAll('.offer-item');
+        const offerButtons = document.querySelectorAll('.offer-btn');
+        const selectedOfferInput = document.getElementById('selected-offer-input');
+        const offerDisplay = document.getElementById('offer-display');
+        const stateSelect = document.getElementById('state-select');
+        const summaryOfferPrice = document.getElementById('summary-offer-price');
+        const summaryDeliveryPrice = document.getElementById('summary-delivery-price');
+        const summaryTotalPrice = document.getElementById('summary-total-price');
 
-<footer>
-جميع الحقوق محفوظة لشركة XYZ
-</footer>
+        const offerNames = {
+            'single': 'عبوة واحدة',
+            'double': 'عبوتان + 125غ مجاناً',
+            'triple': 'ثلاث عبوات + الرابعة مجاناً'
+        };
 
-<a href="#order" class="floating-btn">اطلب الآن</a>
+        const offerPrices = {
+            'single': 215000,
+            'double': 430000,
+            'triple': 645000
+        };
 
-<script>
-// اختيار العروض
-const offerItems = document.querySelectorAll('.offer-item');
-const offerInput = document.getElementById('selectedOffer');
-let selectedPrice = 215000;
+        const deliveryPrices = {
+            'العاصمة': 30000,
+            'البليدة': 40000,
+            'بومرداس': 50000,
+            'سطيف': 60000,
+            'قسنطينة': 70000,
+            'عنابة': 70000,
+            'وهران': 70000,
+            'عين الدفلة': 60000,
+            'مستغانم': 70000,
+            'المسيلة': 70000,
+            'تيزيوزو': 60000,
+            'بجاية': 50000,
+            'المدية': 50000,
+            'بسكرة': 60000,
+            'البويرة': 70000
+        };
 
-offerItems.forEach(item => {
-    item.addEventListener('click', () => {
-        offerItems.forEach(i => i.classList.remove('selected'));
-        item.classList.add('selected');
-        offerInput.value = item.querySelector('h3').textContent;
-        selectedPrice = parseInt(item.dataset.price);
-        updateSummary();
-    });
-});
+        function formatPrice(price) {
+            return `ألف ${(price / 1000).toLocaleString('ar-DZ')}`;
+        }
 
-// ملخص الطلب
-const form = document.getElementById('orderForm');
-const summary = document.getElementById('orderSummary');
-const deliveryPrices = {
-    "العاصمة":400, "البليدة":400, "تيبازة":400, "بومرداس":500,
-    "تيزي وزو":500, "بجاية":600, "الشلف":600, "مستغانم":600, "وهران":700,
-    "سيدي بلعباس":700, "قسنطينة":700, "عنابة":700, "المسيلة":600, "سطيف":600, "برج بوعريريج":600
-};
+        function formatDeliveryPrice(price) {
+            return `ألف ${(price / 1000).toLocaleString('ar-DZ')}`;
+        }
 
-function updateSummary() {
-    const data = new FormData(form);
-    const state = data.get('state') || "";
-    let delivery = deliveryPrices[state] || 0;
-    let total = selectedPrice + delivery; // جمع سعر المنتج والتوصيل
-    summary.innerHTML = `
-        <p>العرض المختار: ${offerInput.value}</p>
-        <p>سعر المنتج: ${selectedPrice.toLocaleString()} دج</p>
-        <p>سعر التوصيل: ${delivery} دج</p>
-        <p><strong>المجموع الكلي: ${total.toLocaleString()} دج</strong></p>
-    `;
-}
+        function formatTotalPrice(price) {
+            return `${(price / 1000).toLocaleString('ar-DZ')} ألف`;
+        }
 
-form.addEventListener('submit', e => {
-    e.preventDefault();
-    updateSummary();
-});
-form.addEventListener('change', updateSummary);
-updateSummary();
-window.location.href="thankyou.html?"+params.toString();
-    }
-</script>
+        function updateOrderSummary() {
+            const selectedOfferId = selectedOfferInput.value;
+            const selectedState = stateSelect.value;
+            
+            const offerPrice = offerPrices[selectedOfferId];
+            const deliveryPrice = deliveryPrices[selectedState] || 0;
+            const totalPrice = offerPrice + deliveryPrice;
 
+            summaryOfferPrice.textContent = formatPrice(offerPrice);
+            summaryDeliveryPrice.textContent = formatDeliveryPrice(deliveryPrice);
+            summaryTotalPrice.textContent = formatTotalPrice(totalPrice);
+        }
+
+        function selectOffer(offerId) {
+            offerItems.forEach(item => {
+                if (item.dataset.offer === offerId) {
+                    item.classList.add('selected');
+                } else {
+                    item.classList.remove('selected');
+                }
+            });
+
+            offerButtons.forEach(btn => {
+                if (btn.dataset.offer === offerId) {
+                    btn.classList.add('selected');
+                } else {
+                    btn.classList.remove('selected');
+                }
+            });
+
+            selectedOfferInput.value = offerId;
+            offerDisplay.value = offerNames[offerId];
+            updateOrderSummary();
+        }
+
+        offerItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const offerId = item.dataset.offer;
+                selectOffer(offerId);
+            });
+        });
+
+        offerButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const offerId = btn.dataset.offer;
+                selectOffer(offerId);
+            });
+        });
+
+        stateSelect.addEventListener('change', updateOrderSummary);
+
+        // اختيار العرض الأول كافتراضي وتحديث الملخص عند تحميل الصفحة
+        selectOffer('single');
+    </script>
 </body>
 </html>
-
-
-
