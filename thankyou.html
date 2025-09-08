@@ -1,38 +1,78 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>شكراً لطلبك</title>
-  <style>
-    body{font-family:'Cairo',sans-serif;background:#FFF8E1;color:#1a4d29;text-align:center;padding:20px}
-    .box{background:#fff;padding:20px;border-radius:10px;max-width:500px;margin:auto;box-shadow:0 4px 12px rgba(0,0,0,0.1)}
-    .summary-row{display:flex;justify-content:space-between;border-bottom:1px dashed #ccc;padding:6px 0}
-    .summary-row:last-child{border-bottom:0;font-weight:bold}
-    a{display:inline-block;margin-top:20px;padding:10px 20px;background:#2E7D32;color:#fff;text-decoration:none;border-radius:8px}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شكراً لك!</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+
+        :root {
+            --primary-color: #ff914d;
+            --dark-color: #1a4d29;
+            --font-family: 'Cairo', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: #FFF8E1;
+            color: var(--dark-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+
+        .thankyou-container {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 90%;
+            border-top: 5px solid var(--primary-color);
+        }
+
+        .thankyou-container h1 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .thankyou-container p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+        
+        .thankyou-container p:last-of-type {
+            color: #555;
+            font-size: 0.9rem;
+        }
+
+        .home-button {
+            display: inline-block;
+            background: var(--dark-color);
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+
+        .home-button:hover {
+            background: #4a6c4c;
+        }
+    </style>
 </head>
 <body>
-  <div class="box">
-    <h1>🎉 شكراً لك!</h1>
-    <p>تم استلام طلبك بنجاح، سيتصل بك فريقنا لتأكيده قريباً.</p>
-    <h2>ملخص الطلبية</h2>
-    <div id="summary"></div>
-    <a href="index.html">⬅ العودة إلى الصفحة الرئيسية</a>
-  </div>
-
-<script>
-  const params=new URLSearchParams(window.location.search);
-  const summary=document.getElementById('summary');
-  function row(label,val){return `<div class="summary-row"><div>${label}</div><div>${val||'-'}</div></div>`}
-  summary.innerHTML=
-    row("الاسم",params.get("name"))+
-    row("الهاتف",params.get("phone"))+
-    row("العرض",params.get("offer"))+
-    row("الولاية",params.get("state"))+
-    row("سعر المنتج",params.get("productPrice")+" دج")+
-    row("سعر التوصيل",params.get("deliveryPrice")+" دج")+
-    row("المجموع",params.get("totalPrice")+" دج");
-</script>
+    <div class="thankyou-container">
+        <h1>✅ شكراً، استلمنا طلبك!</h1>
+        <p>سوف نتواصل معك قريباً لتأكيد الطلب عبر الهاتف.</p>
+        <a href="index.html" class="home-button">العودة إلى الصفحة الرئيسية</a>
+    </div>
 </body>
 </html>
