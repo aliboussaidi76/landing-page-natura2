@@ -576,255 +576,253 @@
             <div class="form-box">
                 <p style="color: var(--dark-color);">اطلب الآن واستفد من العرض المحدود!</p>
                 
-                <form action="#" method="post">
-                    <input type="hidden" name="selected_offer" id="selected-offer-input" value="single">
-                    
-                    <label for="offer-display" style="text-align: right; display: block; margin-bottom: 5px;">العرض المختار:</label>
-                    <input type="text" id="offer-display" name="offer-display" readonly>
-                    
-                    <input type="text" name="name" placeholder="الاسم الكامل" required>
-                    <input type="tel" name="phone" placeholder="رقم الهاتف" required>
-                    <input type="text" name="address" placeholder="عنوان السكن (الشارع، الحي)" required>
-                    <select name="state" id="state-select" required>
-                        <option value="">اختر الولاية</option>
-                        <option value="العاصمة">العاصمة</option>
-                        <option value="البليدة">البليدة</option>
-                        <option value="بومرداس">بومرداس</option>
-                        <option value="سطيف">سطيف</option>
-                        <option value="قسنطينة">قسنطينة</option>
-                        <option value="عنابة">عنابة</option>
-                        <option value="وهران">وهران</option>
-                        <option value="عين الدفلة">عين الدفلة</option>
-                        <option value="مستغانم">مستغانم</option>
-                        <option value="المسيلة">المسيلة</option>
-                        <option value="تيزيوزو">تيزيوزو</option>
-                        <option value="بجاية">بجاية</option>
-                        <option value="المدية">المدية</option>
-                        <option value="بسكرة">بسكرة</option>
-                        <option value="البويرة">البويرة</option>
-                    </select>
-                    
-                    <button type="submit">تأكيد الطلب</button>
-                </form>
-            </div>
-            
-            <div class="order-summary">
-                <h4>ملخص الطلبية</h4>
-                <p>سعر الطلبية: <span id="summary-offer-price" class="price"></span></p>
-                <p>سعر التوصيل: <span id="summary-delivery-price" class="price"></span></p>
-                <p class="total">المجموع: <span id="summary-total-price" class="price"></span></p>
-            </div>
+               <!-- RIGHT: form + cart -->
+    <aside class="card" id="formCard">
+      <h3 style="margin-top:0">للطلب اكتب معلوماتك أسفله</h3>
+      <div class="field">
+        <label>العرض المختار</label>
+        <select id="offerSelect" aria-label="اختر العرض" onchange="offerSelectChanged()">
+          <option value="1">عبوة واحدة — 2800 دج</option>
+          <option value="2">عبوتين — 5600 دج (توصيل مجاني)</option>
+          <option value="3">3 عبوات + 1 هدية — 8400 دج (توصيل مجاني)</option>
+        </select>
+      </div>
+
+      <form id="orderForm">
+        <div class="field">
+          <label>الاسم الكامل</label>
+          <input id="name" name="name" type="text" placeholder="الاسم الكامل" required>
         </div>
-    </section>
-    
-    <section class="hero">
-        <div class="hero-image">
-            <img src="https://i.imgur.com/oD4jG7f.png" alt="صورة توضيحية للنحل والعسل في الطبيعة">
+
+        <div class="field">
+          <label>رقم الهاتف</label>
+          <input id="phone" name="phone" type="tel" placeholder="07XXXXXXXX" pattern="[0-9]{10}" required>
         </div>
-        <div class="container" style="text-align: center; margin-top: 15px;">
-            <h2>حماية من الحلويات الضارة</h2>
-            <p>طفلك يستحق أفضل ما في الطبيعة. قل وداعًا للسكريات المصنعة التي تضر بصحته وذكائه، واستبدلها بحلاوة طبيعية مفيدة!</p>
-            <div class="cta-container">
-                <a href="#order" class="cta-button">اطلب الآن</a>
-            </div>
+
+        <div class="field">
+          <label>الولاية</label>
+          <select id="wilaya" name="wilaya" required>
+            <option value="">اختر ولايتك</option>
+            <option>الجزائر</option><option>البليدة</option><option>بومرداس</option><option>تيبازة</option>
+            <option>تيزي وزو</option><option>البويرة</option><option>المدية</option><option>عين الدفلى</option>
+            <option>الشلف</option><option>وهران</option><option>مستغانم</option><option>معسكر</option>
+            <option>غليزان</option><option>سيدي بلعباس</option><option>تلمسان</option><option>سعيدة</option>
+            <option>تيارت</option><option>تيسمسيلت</option><option>الجلفة</option><option>الأغواط</option>
+            <option>برج بوعريريج</option><option>سطيف</option><option>باتنة</option><option>قسنطينة</option>
+            <option>أم البواقي</option><option>قالمة</option><option>سوق أهراس</option><option>عنابة</option>
+            <option>الطارف</option><option>خنشلة</option><option>تبسة</option><option>المسيلة</option>
+            <option>بجاية</option><option>جيجل</option><option>ميلة</option><option>بسكرة</option>
+            <option>الوادي</option><option>ورقلة</option><option>غرداية</option><option>البيض</option>
+            <option>النعامة</option><option>أدرار</option><option>تمنراست</option><option>إيليزي</option>
+            <option>جانت</option><option>إن صالح</option><option>برج باجي مختار</option>
+          </select>
         </div>
-    </section>
 
-    <section class="benefits">
-        <div class="container">
-            <h2 class="section-title">لماذا يختار الآباء هذا المنتج؟</h2>
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <h3>✅ يقوي المناعة</h3>
-                    <p>مكونات طبيعية غنية بمضادات الأكسدة التي تساعد على بناء جهاز مناعي قوي يحمي طفلك من الأمراض الموسمية.</p>
-                </div>
-                <div class="benefit-card">
-                    <h3>✅ يفتح الشهية</h3>
-                    <p>يحتوي على مكونات طبيعية معروفة بفعاليتها في تحفيز شهية الطفل بطريقة صحية، مما يساعده على تناول طعامه المفضل والاستفادة منه.</p>
-                </div>
-                <div class="benefit-card">
-                    <h3>✅ يعزز التركيز والذاكرة</h3>
-                    <p>غني بالفيتامينات والمعادن الضرورية لدعم وظائف المخ، مما يحسن التركيز وسرعة الحفظ والقدرة على الاستيعاب أثناء الدراسة.</p>
-                </div>
-                <div class="benefit-card">
-                    <h3>✅ بديل صحي للحلويات</h3>
-                    <p>مذاق رائع يحبه الأطفال، لكنه خالٍ من السكريات المكررة والمواد الحافظة الضارة، ليمنحهم الطاقة بدون أضرار.</p>
-                </div>
-            </div>
+        <!-- hidden fields -->
+        <input type="hidden" id="offerField" name="offer" value="عبوة واحدة — 2800">
+        <input type="hidden" id="price_items" name="price_items" value="2800">
+        <input type="hidden" id="price_cart" name="price_cart" value="0">
+        <input type="hidden" id="price_shipping" name="price_shipping" value="0">
+        <input type="hidden" id="total_price" name="total" value="2800">
+
+        <!-- summary -->
+        <div class="summary">
+          <div class="row"><div>سعر العبوات:</div><div id="ui_price_items">2800 دج</div></div>
+          <div class="row"><div>سعر السلة:</div><div id="ui_price_cart">0 دج</div></div>
+          <div class="row"><div>سعر التوصيل:</div><div id="ui_price_shipping">0 دج</div></div>
+          <div class="row total"><div>المجموع الكلي:</div><div id="ui_total">2800 دج</div></div>
         </div>
-    </section>
 
-    <section class="testimonials">
-        <div class="container">
-            <h2 class="section-title">آراء الأمهات اللواتي وثقن بنا</h2>
-            <div class="testimonial-card">
-                <p>"كنت قلقة من نحافة ابني، لكن بعد استخدامه هذا المنتج، تحسنت شهيته بشكل ملحوظ وزاد وزنه بطريقة صحية. شكرًا لكم!"</p>
-                <div class="author">- أم محمد، الجزائر</div>
-            </div>
-            <div class="testimonial-card">
-                <p>"لاحظت فرقًا كبيرًا في تركيز ابنتي أثناء الدروس، لم تعد تتشتت بسرعة وأصبحت تستوعب المعلومات بشكل أسرع. منتج رائع بكل المقاييس."</p>
-                <div class="author">- ليلى، وهران</div>
-            </div>
+        <button type="submit" class="confirm">✅ تأكيد الطلب الآن</button>
+      </form>
+
+      <!-- cart -->
+      <div class="cart" id="cartBox">
+        <strong>سلة المشتريات</strong>
+        <div id="cartList" style="margin-top:8px;color:var(--muted)">السلة فارغة — أضف منتجات إضافية من الأسفل</div>
+      </div>
+
+      <!-- UPSSELLS -->
+      <div class="upsells">
+        <div class="upsell">
+          <img src="upsell-kids.jpg" alt="">
+          <div style="margin-top:8px;font-weight:700">خلطة التبول اللاارادي عند الأطفال</div>
+          <div class="small">3200 دج</div>
+          <button onclick="addToCart('خلطة التبول اللاارادي عند الاطفال',3200)">أضف للسلة</button>
         </div>
-    </section>
-
-    <section class="ingredients">
-        <div class="container">
-            <h2 class="section-title">المكونات وفوائدها</h2>
-            <div class="ingredient-item">
-                <div class="ingredient-image">
-                    <img src="https://i.imgur.com/8F20P2F.jpg" alt="عسل جبلي نقي">
-                </div>
-                <div class="ingredient-text">
-                    <h3>العسل الجبلي النقي</h3>
-                    <p>يُعرف بخصائصه العلاجية الفريدة وقيمته الغذائية العالية. مصدر طبيعي للطاقة السريعة، ويساعد على تهدئة السعال والحلق.</p>
-                </div>
-            </div>
-            <div class="ingredient-item">
-                <div class="ingredient-image">
-                    <img src="https://i.imgur.com/x0qS7cZ.jpg" alt="حبوب لقاح طازجة">
-                </div>
-                <div class="ingredient-text">
-                    <h3>حبوب اللقاح الطازجة</h3>
-                    <p>تُسمى "غذاء الملوك" لاحتوائها على جميع الأحماض الأمينية الأساسية، الفيتامينات، والمعادن. تساعد على تحسين النمو البدني والذهني وتجديد الخلايا.</p>
-                </div>
-            </div>
-            <div class="ingredient-item">
-                <div class="ingredient-image">
-                    <img src="https://i.imgur.com/02Fp6Qp.jpg" alt="غذاء ملكات النحل">
-                </div>
-                <div class="ingredient-text">
-                    <h3>غذاء ملكات النحل (اختياري)</h3>
-                    <p>مضاد حيوي طبيعي يقوي جهاز المناعة، ويمنح الجسم الحيوية والنشاط اللازم للتركيز والاستيعاب.</p>
-                </div>
-            </div>
+        <div class="upsell">
+          <img src="upsell-men.jpg" alt="">
+          <div style="margin-top:8px;font-weight:700">خلطة القوة الجنسية للرجال</div>
+          <div class="small">3500 دج</div>
+          <button onclick="addToCart('خلطة القوة الجنسية للرجال',3500)">أضف للسلة</button>
         </div>
-    </section>
-
-    <section class="usage">
-        <div class="container">
-            <h2 class="section-title">طريقة الاستعمال</h2>
-            <p style="text-align: center; font-size: 0.9rem; margin-bottom: 15px;">للحصول على أفضل النتائج، اتبع هذه الإرشادات البسيطة:</p>
-            <ul>
-                <li>تناول ملعقة صغيرة واحدة يومياً على الريق، قبل وجبة الإفطار.</li>
-                <li>يمكن خلطه مع كوب من الماء الدافئ أو الحليب.</li>
-                <li>يُفضل أن يؤخذ بانتظام لضمان الاستفادة الكاملة من فوائده.</li>
-                <li>يُحفظ في مكان بارد وجاف، بعيداً عن أشعة الشمس المباشرة.</li>
-            </ul>
+        <div class="upsell">
+          <img src="upsell-weight.jpg" alt="">
+          <div style="margin-top:8px;font-weight:700">خلطة التسمين الطبيعي</div>
+          <div class="small">3000 دج</div>
+          <button onclick="addToCart('خلطة التسمين الطبيعي',3000)">أضف للسلة</button>
         </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 جميع الحقوق محفوظة. [اسم شركتك أو علامتك التجارية]</p>
+        <div class="upsell">
+          <img src="upsell-cough.jpg" alt="">
+          <div style="margin-top:8px;font-weight:700">خلطة السعال والبلغم</div>
+          <div class="small">2800 دج</div>
+          <button onclick="addToCart('خلطة السعال والبلغم',2800)">أضف للسلة</button>
         </div>
-    </footer>
+        <div class="upsell">
+          <img src="upsell-flower.jpg" alt="">
+          <div style="margin-top:8px;font-weight:700">عسل الأزهار (250غ)</div>
+          <div class="small">2200 دج</div>
+          <button onclick="addToCart('عسل الازهار',2200)">أضف للسلة</button>
+        </div>
+        <div class="upsell">
+          <img src="upsell-sidr.jpg" alt="">
+          <div style="margin-top:8px;font-weight:700">عسل السدر (250غ)</div>
+          <div class="small">4200 دج</div>
+          <button onclick="addToCart('عسل السدر',4200)">أضف للسلة</button>
+        </div>
+      </div>
 
-    <script>
-        const offerItems = document.querySelectorAll('.offer-item');
-        const offerButtons = document.querySelectorAll('.offer-btn');
-        const selectedOfferInput = document.getElementById('selected-offer-input');
-        const offerDisplay = document.getElementById('offer-display');
-        const stateSelect = document.getElementById('state-select');
-        const summaryOfferPrice = document.getElementById('summary-offer-price');
-        const summaryDeliveryPrice = document.getElementById('summary-delivery-price');
-        const summaryTotalPrice = document.getElementById('summary-total-price');
+    </aside>
+  </div>
 
-        const offerNames = {
-            'single': 'عبوة واحدة',
-            'double': 'عبوتان + 125غ مجاناً',
-            'triple': 'ثلاث عبوات + الرابعة مجاناً'
-        };
+  <div class="footer">
+    <div>سياسة الإرجاع: استرجاع خلال 7 أيام عند وجود تلف أو عدم مطابقة.</div>
+    <div style="margin-top:8px">© 2025 مناحل وعسل آل البوسعيدي — جميع الحقوق محفوظة</div>
+  </div>
+</div>
 
-        const offerPrices = {
-            'single': 215000,
-            'double': 430000,
-            'triple': 645000
-        };
+<button class="sticky-order" onclick="goToName()">🛒 اطلب الآن</button>
 
-        const deliveryPrices = {
-            'العاصمة': 30000,
-            'البليدة': 40000,
-            'بومرداس': 50000,
-            'سطيف': 60000,
-            'قسنطينة': 70000,
-            'عنابة': 70000,
-            'وهران': 70000,
-            'عين الدفلة': 60000,
-            'مستغانم': 70000,
-            'المسيلة': 70000,
-            'تيزيوزو': 60000,
-            'بجاية': 50000,
-            'المدية': 50000,
-            'بسكرة': 60000,
-            'البويرة': 70000
-        };
+<script>
+/* ==== ضع رابط Web App هنا (رابط /exec من Google Apps Script) ==== */
+const WEBAPP_URL = "https://script.google.com/macros/s/AKfycbwgRZm4ppj_HRz-gaDf4UKg-9aN7bYots2xEGsoQPQ2eno_dK0NHsNIwGZg7wriI6YULQ/exec";
+/* ==== ثابت السعر وقائمة الشحن حسب الولاية ==== */
+const UNIT_PRICE = 2800;
+const shippingTable = { "الجزائر":400,"البليدة":400,"بومرداس":400,"تيبازة":400,"تيزي وزو":700,"البويرة":700,"المدية":700,"عين الدفلى":700,"الشلف":700,"وهران":800,"مستغانم":800,"معسكر":800,"غليزان":800,"سيدي بلعباس":800,"تلمسان":900,"سعيدة":900,"تيارت":900,"تيسمسيلت":900,"الجلفة":900,"الأغواط":900,"برج بوعريريج":900,"سطيف":900,"باتنة":900,"قسنطينة":1000,"أم البواقي":1000,"قالمة":1000,"سوق أهراس":1000,"عنابة":1000,"الطارف":1000,"خنشلة":1000,"تبسة":1000,"المسيلة":1000,"بجاية":1000,"جيجل":1000,"ميلة":1000,"بسكرة":1100,"الوادي":1100,"ورقلة":1100,"غرداية":1100,"البيض":1100,"النعامة":1300,"أدرار":1300,"تمنراست":1300,"إيليزي":1300,"جانت":1300,"إن صالح":1300,"برج باجي مختار":1300 };
 
-        function formatPrice(price) {
-            return `ألف ${(price / 1000).toLocaleString('ar-DZ')}`;
-        }
+/* ==== حالة السلة والعروض ==== */
+let cart = [];
+const offerCards = document.querySelectorAll('.offer-card');
+const offerSelect = document.getElementById('offerSelect');
+const ui_price_items = document.getElementById('ui_price_items');
+const ui_price_cart = document.getElementById('ui_price_cart');
+const ui_price_shipping = document.getElementById('ui_price_shipping');
+const ui_total = document.getElementById('ui_total');
 
-        function formatDeliveryPrice(price) {
-            return `ألف ${(price / 1000).toLocaleString('ar-DZ')}`;
-        }
+/* ===== functions ===== */
+function selectOfferCard(el){
+  offerCards.forEach(c=>c.classList.remove('active'));
+  el.classList.add('active');
+  const offer = el.getAttribute('data-offer');
+  const price = parseInt(el.getAttribute('data-price')) || UNIT_PRICE;
+  // Update select and hidden fields
+  document.getElementById('offerSelect').value = offer;
+  document.getElementById('offerField').value = (offer==='1' ? 'عبوة واحدة — 2800' : (offer==='2' ? 'عبوتين — 5600' : '3 عبوات + 1 — 8400'));
+  document.getElementById('price_items').value = price;
+  computePrices();
+  document.getElementById('formCard').scrollIntoView({behavior:'smooth',block:'center'});
+}
 
-        function formatTotalPrice(price) {
-            return `${(price / 1000).toLocaleString('ar-DZ')} ألف`;
-        }
+function offerSelectChanged(){
+  const v = document.getElementById('offerSelect').value;
+  // map select values to price & active card
+  const map = { "1":2800, "2":5600, "3":8400 };
+  const price = map[v] || UNIT_PRICE;
+  document.getElementById('price_items').value = price;
+  // sync cards
+  offerCards.forEach(c => { if(c.getAttribute('data-offer')===v) c.classList.add('active'); else c.classList.remove('active'); });
+  document.getElementById('offerField').value = (v==='1' ? 'عبوة واحدة — 2800' : (v==='2' ? 'عبوتين — 5600' : '3 عبوات + 1 — 8400'));
+  computePrices();
+}
 
-        function updateOrderSummary() {
-            const selectedOfferId = selectedOfferInput.value;
-            const selectedState = stateSelect.value;
-            
-            const offerPrice = offerPrices[selectedOfferId];
-            const deliveryPrice = deliveryPrices[selectedState] || 0;
-            const totalPrice = offerPrice + deliveryPrice;
+function addToCart(name, price){
+  const idx = cart.findIndex(i=>i.name===name);
+  if(idx>-1) cart[idx].qty += 1; else cart.push({name, price, qty:1});
+  renderCart(); computePrices();
+}
 
-            summaryOfferPrice.textContent = formatPrice(offerPrice);
-            summaryDeliveryPrice.textContent = formatDeliveryPrice(deliveryPrice);
-            summaryTotalPrice.textContent = formatTotalPrice(totalPrice);
-        }
+function changeQty(i,delta){ cart[i].qty = Math.max(1, cart[i].qty + delta); renderCart(); computePrices(); }
+function removeFromCart(i){ cart.splice(i,1); renderCart(); computePrices(); }
 
-        function selectOffer(offerId) {
-            offerItems.forEach(item => {
-                if (item.dataset.offer === offerId) {
-                    item.classList.add('selected');
-                } else {
-                    item.classList.remove('selected');
-                }
-            });
+function renderCart(){
+  const el = document.getElementById('cartList');
+  if(!cart.length){ el.innerHTML = '<div class="small">السلة فارغة — أضف منتجات إضافية</div>'; document.getElementById('price_cart').value = 0; ui_price_cart.textContent = '0 دج'; return; }
+  el.innerHTML = '';
+  cart.forEach((it, idx)=>{
+    const row = document.createElement('div'); row.style.display='flex'; row.style.justifyContent='space-between'; row.style.alignItems='center'; row.style.marginBottom='8px';
+    row.innerHTML = `<div><strong>${it.name}</strong><div class="small">${it.price} دج × ${it.qty}</div></div>
+      <div style="display:flex;gap:8px;align-items:center">
+        <button onclick="changeQty(${idx},-1)">−</button>
+        <button onclick="changeQty(${idx},1)">+</button>
+        <button onclick="removeFromCart(${idx})" style="background:#ff6b6b;color:#fff;border-radius:6px;padding:6px 8px;border:0">حذف</button>
+      </div>`;
+    el.appendChild(row);
+  });
+}
 
-            offerButtons.forEach(btn => {
-                if (btn.dataset.offer === offerId) {
-                    btn.classList.add('selected');
-                } else {
-                    btn.classList.remove('selected');
-                }
-            });
+/* حساب الأسعار */
+function computePrices(){
+  const offerText = document.getElementById('offerField').value || 'عبوة واحدة — 2800';
+  const priceItems = parseInt(document.getElementById('price_items').value) || UNIT_PRICE;
+  const cartSum = cart.reduce((s,i)=> s + i.price * i.qty, 0);
+  const wilaya = document.getElementById('wilaya').value;
+  let shipping = shippingTable[wilaya] || 0;
+  // قواعد: عروض 2 و 3 شحن مجاني
+  if(offerText.includes('عبوتين') || offerText.includes('3 عبوات')) shipping = 0;
+  const total = priceItems + cartSum + shipping;
+  ui_price_items.textContent = priceItems + ' دج';
+  ui_price_cart.textContent = cartSum + ' دج';
+  ui_price_shipping.textContent = (shipping===0 ? 'مجاني' : shipping + ' دج');
+  ui_total.textContent = total + ' دج';
+  // hidden inputs
+  document.getElementById('price_items').value = priceItems;
+  document.getElementById('price_cart').value = cartSum;
+  document.getElementById('price_shipping').value = shipping;
+  document.getElementById('total_price').value = total;
+  return {priceItems, cartSum, shipping, total};
+}
 
-            selectedOfferInput.value = offerId;
-            offerDisplay.value = offerNames[offerId];
-            updateOrderSummary();
-        }
+/* انتقال إلى الخانة الاسم */
+function goToName(){ document.getElementById('name').scrollIntoView({behavior:'smooth',block:'center'}); document.getElementById('name').focus(); }
 
-        offerItems.forEach(item => {
-            item.addEventListener('click', () => {
-                const offerId = item.dataset.offer;
-                selectOffer(offerId);
-            });
-        });
+/* init hidden inputs if not present */
+document.addEventListener('DOMContentLoaded', function(){
+  if(!document.getElementById('offerField')){ const inp=document.createElement('input'); inp.type='hidden'; inp.id='offerField'; inp.name='offer'; inp.value='عبوة واحدة — 2800'; document.getElementById('orderForm').appendChild(inp); }
+  if(!document.getElementById('price_items')){ const x=document.createElement('input'); x.type='hidden'; x.id='price_items'; x.name='price_items'; x.value=2800; document.getElementById('orderForm').appendChild(x); }
+  if(!document.getElementById('price_cart')){ const x=document.createElement('input'); x.type='hidden'; x.id='price_cart'; x.name='price_cart'; x.value=0; document.getElementById('orderForm').appendChild(x); }
+  if(!document.getElementById('price_shipping')){ const x=document.createElement('input'); x.type='hidden'; x.id='price_shipping'; x.name='price_shipping'; x.value=0; document.getElementById('orderForm').appendChild(x); }
+  if(!document.getElementById('total_price')){ const x=document.createElement('input'); x.type='hidden'; x.id='total_price'; x.name='total'; x.value=2800; document.getElementById('orderForm').appendChild(x); }
+  computePrices();
+});
 
-        offerButtons.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const offerId = btn.dataset.offer;
-                selectOffer(offerId);
-            });
-        });
-
-        stateSelect.addEventListener('change', updateOrderSummary);
-
-        // اختيار العرض الأول كافتراضي وتحديث الملخص عند تحميل الصفحة
-        selectOffer('single');
-    </script>
+/* إرسال الفورم عبر fetch إلى Google Apps Script */
+document.getElementById('orderForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  // validate phone
+  const phone = document.getElementById('phone').value.trim();
+  if(!/^[0-9]{10}$/.test(phone)){ alert('رجاءً أدخل رقم هاتف صالح مكوّن من 10 أرقام'); document.getElementById('phone').focus(); return; }
+  // build FormData
+  const fd = new FormData();
+  fd.append('name', document.getElementById('name').value.trim());
+  fd.append('phone', phone);
+  fd.append('wilaya', document.getElementById('wilaya').value);
+  fd.append('offer', document.getElementById('offerField').value);
+  fd.append('price_items', document.getElementById('price_items').value);
+  fd.append('price_cart', document.getElementById('price_cart').value);
+  fd.append('price_shipping', document.getElementById('price_shipping').value);
+  fd.append('total', document.getElementById('total_price').value);
+  // include cart items as upsell[]
+  cart.forEach(item => fd.append('upsell[]', `${item.name} x${item.qty} (${item.price} دج)`));
+  // send
+  if(!WEBAPP_URL || WEBAPP_URL.includes("PUT_YOUR_WEBAPP_URL_HERE")){ alert('خطأ: لم تقم بإعداد رابط Web App. افتح الكود وعيّن WEBAPP_URL.'); return; }
+  fetch(WEBAPP_URL, { method: 'POST', body: fd })
+    .then(r => r.json())
+    .then(res => {
+      if(res.result === 'success'){ cart=[]; renderCart(); computePrices(); window.location.href = "thankyou.html"; }
+      else { alert('خطأ في الإرسال: ' + (res.message||'')); }
+    })
+    .catch(err => { console.error(err); alert('حدث خطأ أثناء الإرسال. تأكد من رابط Web App وأنه منشور (Who has access = Tout le monde).'); });
+});
+</script>
 </body>
 </html>
